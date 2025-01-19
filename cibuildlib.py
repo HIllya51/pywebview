@@ -40,6 +40,10 @@ if len(sys.argv) >= 2 and sys.argv[1] == "release":
 curr = os.getcwd()
 print(curr)
 if sys.platform == "win32":
+        
+    url = "https://github.com/Chuyu-Team/YY-Thunks/releases/download/v1.1.5/YY-Thunks-1.1.5-Objs.zip"
+    os.system(rf"curl -SLo YY-Thunks-1.1.5-Objs.zip " + url)
+    os.system(rf"7z x -y YY-Thunks-1.1.5-Objs.zip -oYY-Thunks")
     os.system("cmake -A win32 -T host=x86 -B ./build/x86")
     os.system("cmake --build ./build/x86 --config Release --target ALL_BUILD")
 
